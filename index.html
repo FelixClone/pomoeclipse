@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>Pomo Eclipse</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <button><i class="bi bi-list"></i></button>
+            </nav>
+        </header>
+        <section class="text-white row">
+            <div class="timer">
+                <div id="timer-label" class="mb-4">Working</div>
+                <div class="eclipse-time">
+                    <div class="eclipse-time-inner">
+                        <svg>
+                            <circle cx="70" cy="70" r="70"></circle>
+                            <circle id="cicleTime" cx="70" cy="70" r="70"></circle>
+                        </svg>
+                    </div>
+                </div>
+                <div id="time-left">25:00</div>
+                <div class="d-flex fix-buttons">
+                    <div class="btn-radius"><button id="start_stop" onclick="startStop()"> <i class="bi bi-caret-right"></i> </button></div>           
+                    <div class="btn-radius"><button id="reset" onclick="reset()"> <i class="bi bi-arrow-clockwise"></i> </button></div>    
+                </div>
+              
+                
+                
+                
+            </div>
+        </section>
+        
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script/script.js"></script>
+    </body>
+</html>

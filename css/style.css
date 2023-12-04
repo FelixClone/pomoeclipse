@@ -1,0 +1,85 @@
+body{
+    font-family: 'Arial', sans-serif;
+    background-color: #1A1A21 !important; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+nav{
+    float: inline-end;
+    font-size: 30px;
+}
+section {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.timer {
+    text-align: center;
+
+}
+
+#time-left {
+    font-size: 3em;
+    margin: 10px 0;
+}
+
+.eclipse-time-inner svg{
+    width: 150px;
+    height: 150px;
+    position: relative;
+}
+
+circle{
+    width: 150px;
+    height: 150px;
+    fill: none;
+    stroke: black;
+    stroke-width: 10px;
+    transform: translate(5px,5px);
+    stroke-dasharray: 440;
+    stroke-dashoffset: 440;
+}
+circle:nth-child(1){
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+    stroke:rgb(7, 7, 7);
+}
+circle:nth-child(2){
+    stroke:#8E672B;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.08s;
+    
+}
+
+button {
+    color: white;
+    background:none;
+    border: none;
+    justify-content: space-between;
+    
+}
+.btn-radius{
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    
+
+}
+.btn-radius:hover{
+    background-color: rgba(255, 255, 255, 0.192);
+}
+.fix-buttons{
+    font-size: 22px;
+    justify-content: center;
+}
+
+.mark{
+    border: 1px solid red;
+}
