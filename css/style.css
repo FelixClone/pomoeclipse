@@ -1,5 +1,12 @@
+@font-face{
+    font-family: 'Major Mono Display';
+    src: url(../fonts/MajorMonoDisplay-Regular.woff) format('woff');
+}
+@font-face{
+    font-family: 'Red Hat Display';
+    src: url(../fonts/RedHatDisplay-Light.woff) format('woff');
+}
 body{
-    font-family: 'Arial', sans-serif;
     background-color: #1A1A21 !important; 
     margin: 0;
     padding: 0;
@@ -10,7 +17,7 @@ nav{
     font-size: 30px;
 }
 section {
-    
+    clear: end;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,6 +33,10 @@ section {
 #time-left {
     font-size: 3em;
     margin: 10px 0;
+    font-family: 'Red Hat Display';
+}
+#timer-label{
+    font-family: 'Major Mono Display';
 }
 
 .eclipse-time-inner svg{
