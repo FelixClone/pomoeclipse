@@ -1,6 +1,6 @@
 let isRunning = false;
 let timer;
-let cicle = document.getElementById('cicleTime')
+let wheel = document.getElementById('wheelTime')
 let pointToBeGood = 0;
 
 function startStop() {
@@ -19,14 +19,14 @@ function reset() {
     isRunning = false;
     document.getElementById('timer-label').innerText = 'Working';
     document.getElementById('time-left').innerText = '25:00';
-    cicle.style.stroke='#8E672B'
-    cicle.style.strokeDashoffset = 0;
+    wheel.style.stroke='#8E672B'
+    wheel.style.strokeDashoffset = 0;
 }
 
 function countdown() {
     let timeLeft = document.getElementById('time-left').innerText;
     let [minutes, seconds] = timeLeft.split(':').map(Number);
-    
+    let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616,relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676, beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
 
     if (minutes === 0 && seconds === 0) {
         if (document.getElementById('timer-label').innerText === 'Working') {
@@ -35,22 +35,21 @@ function countdown() {
             if(pointToBeGood === 4){
                 document.getElementById('timer-label').innerText = 'Be good';
                 timeLeft = '15:00';
-                cicle.style.stroke='#518E2B'
+                wheel.style.stroke='#518E2B'
                 pointToBeGood = 0;
             }else{
                 document.getElementById('timer-label').innerText = 'Relaxing';
                 timeLeft = '05:00';
-                cicle.style.stroke='#2B6A8E'
+                wheel.style.stroke='#2B6A8E'
             }
             pointToBeGood++;
-            console.log(pointToBeGood);
 
             
             
         } else {
             document.getElementById('timer-label').innerText = 'Working';
             timeLeft = '25:00';
-            cicle.style.stroke='#8E672B'
+            wheel.style.stroke='#8E672B'
             
             
         }
@@ -61,14 +60,16 @@ function countdown() {
         } else {
             seconds--;
         }
+        let minutesInSeconds = minutes*60;
+        let minutesPlusSecond = minutesInSeconds+seconds;
         if(document.getElementById('timer-label').innerText === 'Working'){
-            cicle.style.strokeDashoffset = 440-(17.6*minutes);
+            wheel.style.strokeDashoffset = 440-(workingSecondToMakePerfectWheel*minutesPlusSecond);
         }
         if(document.getElementById('timer-label').innerText === 'Relaxing'){
-            cicle.style.strokeDashoffset = 440-(88*minutes);
+            wheel.style.strokeDashoffset = 440-(relaxingSecondToMakePerfectWheel*minutesPlusSecond);
         }
         if(document.getElementById('timer-label').innerText === 'Be good'){
-            cicle.style.strokeDashoffset = 440-(29.3*minutes);
+            wheel.style.strokeDashoffset = 440-(beGoodSecondToMakePerfectWheel*minutesPlusSecond);
         }
         timeLeft = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
