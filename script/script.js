@@ -1,15 +1,18 @@
 let isRunning = false;
 let timer;
 let wheel = document.getElementById('wheelTime')
+let playerPause = document.getElementById('playerPause')
 let pointToBeGood = 0;
 
 function startStop() {
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
+        playerPause.setAttribute('class','bi-caret-right')
     } else {
         timer = setInterval(countdown, 1000);
         isRunning = true;
+        playerPause.setAttribute('class','bi-pause')
     }
     
 }
