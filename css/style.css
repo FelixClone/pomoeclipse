@@ -29,7 +29,9 @@ section {
     text-align: center;
 
 }
-
+#reset{
+    cursor: pointer;
+}
 #time-left {
     font-size: 3em;
     margin: 10px 0;

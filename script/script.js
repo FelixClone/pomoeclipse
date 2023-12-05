@@ -1,10 +1,15 @@
 let isRunning = false;
 let timer;
-let wheel = document.getElementById('wheelTime')
-let playerPause = document.getElementById('playerPause')
+let wheel = document.getElementById('wheelTime');
+let playerPause = document.getElementById('playerPause');
+let audReset = document.getElementById('audReset');
+let audStartStop = document.getElementById('audStartStop');
+
 let pointToBeGood = 0;
+let timeoutId;
 
 function startStop() {
+    audStartStop.play()
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
@@ -16,26 +21,38 @@ function startStop() {
     }
     
 }
+document.getElementById('reset').addEventListener('mousedown', () => {
+    timeoutId = setTimeout(() => {
+        // Ação a ser executada após 1 segundo
+        clearInterval(timer);
+        audReset.play();
+        isRunning = false;
+        document.getElementById('timer-label').innerText = 'Working';
+        document.getElementById('time-left').innerText = '25:00';
+        wheel.style.stroke='#8E672B'
+        wheel.style.strokeDashoffset = 0;
+        playerPause.setAttribute('class','bi-caret-right')
+    }, 1000);
+});
 
-function reset() {
-    clearInterval(timer);
-    isRunning = false;
-    document.getElementById('timer-label').innerText = 'Working';
-    document.getElementById('time-left').innerText = '25:00';
-    wheel.style.stroke='#8E672B'
-    wheel.style.strokeDashoffset = 0;
-}
+document.getElementById('reset').addEventListener('mouseup', () => {
+    clearTimeout(timeoutId);
+});
+
 
 function countdown() {
     let timeLeft = document.getElementById('time-left').innerText;
     let [minutes, seconds] = timeLeft.split(':').map(Number);
-    let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616,relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676, beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
+    let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616;
+    let relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676; 
+    let beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
     let alarm = document.getElementById('pomoAlarm')
+
     if (minutes === 0 && seconds === 0) {
         if (document.getElementById('timer-label').innerText === 'Working') {
             
 
-            if(pointToBeGood === 2){
+            if(pointToBeGood === 4){
                 document.getElementById('timer-label').innerText = 'Be good';
                 timeLeft = '15:00';
                 wheel.style.stroke='#518E2B'

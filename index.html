@@ -20,7 +20,7 @@
                 <div id="timer-label" class="mb-4">Working</div>
                 <div class="eclipse-time">
                     <div class="eclipse-time-inner">
-                        <svg>
+                        <svg  id="reset">
                             <circle cx="70" cy="70" r="70"></circle>
                             <circle id="wheelTime" cx="70" cy="70" r="70"></circle>
                         </svg>
@@ -28,9 +28,11 @@
                 </div>
                 <div id="time-left">25:00</div>
                 <div class="d-flex fix-buttons">
-                    <div class="btn-radius"><button id="start_stop" onclick="startStop()"> <i id="playerPause" class="bi bi-caret-right"></i> </button></div>           
-                    <div class="btn-radius"><button id="reset" onclick="reset()"> <i class="bi bi-arrow-clockwise"></i> </button></div>
-                    <audio id="pomoAlarm" src="aud/mixkit-alert-quick-chime-766.wav"></audio>   
+                    <div class="btn-radius"><button id="start_stop" onclick="startStop()"> <i id="playerPause" class="bi bi-caret-right"></i> </button></div>
+                    <audio id="pomoAlarm" src="aud/mixkit-alert-quick-chime-766.wav"></audio>
+                    <audio id="audReset" src="aud/mixkit-explainer-video-game-alert-sweep-236.wav"></audio>
+                    <audio id="audStartStop" src="aud/mixkit-cool-interface-click-tone-2568.wav"></audio>
+                    
                 </div>
             </div>
         </section>
