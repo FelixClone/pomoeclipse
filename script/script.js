@@ -27,12 +27,12 @@ function countdown() {
     let timeLeft = document.getElementById('time-left').innerText;
     let [minutes, seconds] = timeLeft.split(':').map(Number);
     let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616,relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676, beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
-
+    let alarm = document.getElementById('pomoAlarm')
     if (minutes === 0 && seconds === 0) {
         if (document.getElementById('timer-label').innerText === 'Working') {
             
 
-            if(pointToBeGood === 4){
+            if(pointToBeGood === 2){
                 document.getElementById('timer-label').innerText = 'Be good';
                 timeLeft = '15:00';
                 wheel.style.stroke='#518E2B'
@@ -43,14 +43,14 @@ function countdown() {
                 wheel.style.stroke='#2B6A8E'
             }
             pointToBeGood++;
-
+            alarm.play();
             
             
         } else {
             document.getElementById('timer-label').innerText = 'Working';
             timeLeft = '25:00';
             wheel.style.stroke='#8E672B'
-            
+            alarm.play();
             
         }
     } else {
