@@ -12,12 +12,81 @@ body{
     padding: 0;
     overflow: hidden;
 }
-nav{
-    float: inline-end;
+div#sidebar{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #131318;
+    overflow: hidden;
+    transition: .5s;
+}
+
+div#sidebar.action{
+    width: 300px;
+    transition: 1s;
+}
+div#sidebar.off{
+    width: 0px;
+    
+    transition: 1s;
+}
+.body-action-nav ul li{
+    list-style-type: none;
+    
+}
+.exp-action-nav{
+    margin-right: 10px;
+}
+.body-action-nav ul li a {
+    color: white;
+    font-family: 'Major Mono Display';
+    font-size: 18px;
+    text-decoration: none;
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    transition: .2s;
+}
+.body-action-nav ul li a:hover{
+    color: rgba(245, 245, 245, 0.767);
+}
+.body-action-nav ul{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.action .body-action-nav ul{
+    opacity: 1;
+    transition: 5.5s;
+    right: 43px;
+    
+}
+.off .body-action-nav ul{
+    transition: .3s;
+    opacity: 0;
+    right: 23px;
+}
+
+.exp-action-nav{
+    color: white;
+    cursor: pointer;
     font-size: 30px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    z-index: 1;
+}
+.anotherFontPLS{
+    font-family: 'Red Hat Display';
 }
 section {
-    clear: end;
     display: flex;
     align-items: center;
     justify-content: center;

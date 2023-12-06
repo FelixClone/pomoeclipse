@@ -4,6 +4,9 @@ let wheel = document.getElementById('wheelTime');
 let playerPause = document.getElementById('playerPause');
 let audReset = document.getElementById('audReset');
 let audStartStop = document.getElementById('audStartStop');
+let sidebar = document.getElementById('sidebar');
+let expAction = document.getElementById('exp-action');
+
 
 let pointToBeGood = 0;
 let timeoutId;
@@ -21,9 +24,9 @@ function startStop() {
     }
     
 }
+// Reset action to be performed after 1 second
 document.getElementById('reset').addEventListener('mousedown', () => {
     timeoutId = setTimeout(() => {
-        // Ação a ser executada após 1 segundo
         clearInterval(timer);
         audReset.play();
         isRunning = false;
@@ -35,6 +38,7 @@ document.getElementById('reset').addEventListener('mousedown', () => {
     }, 1000);
 });
 
+// Do not execute if aborted before 1 second
 document.getElementById('reset').addEventListener('mouseup', () => {
     clearTimeout(timeoutId);
 });
@@ -95,4 +99,19 @@ function countdown() {
     }
 
     document.getElementById('time-left').innerText = timeLeft;
+}
+//Makes the hamburger menu work
+let hamburgerOn = false;
+function actionHamburger(){
+    if(hamburgerOn === false){
+        sidebar.setAttribute('class','action');
+        expAction.setAttribute('class','bi-x-lg');
+        hamburgerOn = true;
+        
+    }else{
+        sidebar.setAttribute('class','off');
+        expAction.setAttribute('class','bi-list');
+        hamburgerOn = false;
+    }
+    
 }
