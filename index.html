@@ -11,29 +11,30 @@
     </head>
     <body>
         <header>
-            <nav >
-                <div class="exp-action-nav">
-                    <i id="exp-action" onclick="actionHamburger()" class="bi bi-list"></i>
-                </div>
-                <div id="sidebar" class="off">
-                    <div class="body-action-nav">
-                        <ul>
-                            <li>
-                                <a href="" >About us</a>
-                            </li>
-                            <li>
-                                <a href=""><span class="anotherFontPLS">C</span>ontact us</a>
-                            </li>
-                            <li>
-                                <a href=""><span class="anotherFontPLS">D</span>onate us</a>
-                            </li>
-                        </ul>
+            <aside>
+                <nav >
+                    <div class="exp-action-nav">
+                        <i id="exp-action" onclick="actionHamburger()" class="bi bi-list"></i>
                     </div>
-                </div>
-                
-            </nav>
+                    <div id="sidebar" class="off">
+                        <div class="body-action-nav">
+                            <ul>
+                                <li>
+                                    <a href="html/about-us.html" >About</a>
+                                </li>
+                                <li>
+                                    <a href=""><span class="anotherFontPLS">C</span>ontact us</a>
+                                </li>
+                                <li>
+                                    <a href="html/about-us.html#donate"><span class="anotherFontPLS">D</span>onate</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </aside>   
         </header>
-        <section class="text-white row">
+        <section class="pomodoro text-white row">
             <div class="timer">
                 <div id="timer-label" class="mb-4">Working</div>
                 <div class="eclipse-time">
@@ -49,8 +50,7 @@
                     <div class="btn-radius"><button id="start_stop" onclick="startStop()"> <i id="playerPause" class="bi bi-caret-right"></i> </button></div>
                     <audio id="pomoAlarm" src="aud/mixkit-alert-quick-chime-766.wav"></audio>
                     <audio id="audReset" src="aud/mixkit-explainer-video-game-alert-sweep-236.wav"></audio>
-                    <audio id="audStartStop" src="aud/mixkit-cool-interface-click-tone-2568.wav"></audio>
-                    
+                    <audio id="audStartStop" src="aud/mixkit-cool-interface-click-tone-2568.wav"></audio>              
                 </div>
             </div>
         </section>

@@ -6,11 +6,22 @@
     font-family: 'Red Hat Display';
     src: url(../fonts/RedHatDisplay-Light.woff) format('woff');
 }
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Light.woff') format('woff');
+    font-weight: 300;
+}
+@font-face {
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Thin.woff') format('woff');
+    font-weight: 100;
+}
+
 body{
     background-color: #1A1A21 !important; 
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 div#sidebar{
     height: 100%;
@@ -20,6 +31,7 @@ div#sidebar{
     background-color: #131318;
     overflow: hidden;
     transition: .5s;
+    z-index: 1;
 }
 
 div#sidebar.action{
@@ -81,12 +93,103 @@ div#sidebar.off{
     right: 0;
     display: flex;
     justify-content: end;
-    z-index: 1;
+    z-index: 2;
+}
+.about-nav{
+    width: 85px;
+    height: 100vh;
+    background-color: #131318;
+    position: fixed;
+    display: flex;
+    top: 0;
+    right: 0;
+}
+.about-nav ul{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.about-nav ul{
+    height: 100%;
+    list-style-type: none;
+    
+    
+}
+
+
+.about-nav a .icon{
+    font-size: 30px;   
+}
+.about-nav:hover{
+    width: 300px;
+    transition: .5s;
+}
+
+ul li.item a{
+    color: white;
+    text-decoration: none;
+    line-height: 40px;
+    display: flex;
+    margin-bottom: 20px;
+}
+ul li.item a .text-link{
+    margin-left: 25px;
+    font-family: 'Major Mono Display';
+}
+
+.about-nav a:hover{
+    color: rgba(245, 245, 245, 0.767);
+}
+.banner-pomoeclipse{
+    position: relative;
+    width: 600px;
+    top: 0;
+    left: 0;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+section article.article-box h2,p{
+    color: white;
+    margin-left: 50px;
+}
+section article.article-box h2{ 
+    margin-top: 30px;
+    font-family: 'Roboto';
+    font-weight: 100;
+    font-size: 35px;
+}
+section article.article-box p{
+    margin-top: 12px;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 24px;
+}
+.article-box{
+    width: 844px;
 }
 .anotherFontPLS{
     font-family: 'Red Hat Display';
 }
-section {
+.donate-section{
+    height: 100vh;
+}
+.article-box p.big-text{
+    font-size: 40px;
+}
+.article-box p.smile-face{
+    display: flex;
+    justify-content: center;
+    font-size: 58px;
+}
+article.img-donate{
+    margin-top: 145px;
+}
+article.img{
+  
+    display: flex;
+    justify-content: center;
+}
+section.pomodoro {
     display: flex;
     align-items: center;
     justify-content: center;
