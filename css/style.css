@@ -103,6 +103,7 @@ div#sidebar.off{
     display: flex;
     top: 0;
     right: 0;
+    z-index: 2;
 }
 .about-nav ul{
     display: flex;
@@ -116,6 +117,13 @@ div#sidebar.off{
     
 }
 
+.body-footer{
+    background-color: #131318;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
 
 .about-nav a .icon{
     font-size: 30px;   
@@ -154,6 +162,7 @@ section article.article-box h2,p{
 }
 section article.article-box h2{ 
     margin-top: 30px;
+    margin-bottom: 20px;
     font-family: 'Roboto';
     font-weight: 100;
     font-size: 35px;
@@ -163,6 +172,15 @@ section article.article-box p{
     font-family: 'Roboto';
     font-weight: 300;
     font-size: 24px;
+}
+footer .body-footer a{
+    color: white;
+    text-decoration: none;
+}
+footer .body-footer a:hover{
+    color: rgba(255, 255, 255, 0.425);
+    text-decoration: none;
+    transition: 0.5s;
 }
 .article-box{
     width: 844px;
