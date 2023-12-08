@@ -224,7 +224,6 @@ section.pomodoro {
 }
 #time-left {
     font-size: 3em;
-    margin: 10px 0;
     font-family: 'Red Hat Display';
 }
 #timer-label{
@@ -237,7 +236,7 @@ section.pomodoro {
     position: relative;
 }
 
-circle{
+#reset circle{
     width: 150px;
     height: 150px;
     fill: none;
@@ -247,12 +246,12 @@ circle{
     stroke-dasharray: 440;
     stroke-dashoffset: 440;
 }
-circle:nth-child(1){
+#reset circle:nth-child(1){
     stroke-dashoffset: 0;
     stroke-width: 2px;
     stroke:rgb(7, 7, 7);
 }
-circle:nth-child(2){
+#reset circle:nth-child(2){
     stroke:#8E672B;
     stroke-dashoffset: 0;
     transition: stroke-dashoffset 0.08s;
@@ -264,7 +263,11 @@ button {
     background:none;
     border: none;
     justify-content: space-between;
-    
+}
+.bi-circle-fill{
+    color: #ffffff77;
+    margin-top: 0;
+    font-size: 5px;
 }
 .btn-radius{
     display: flex;

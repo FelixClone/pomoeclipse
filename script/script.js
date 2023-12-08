@@ -1,16 +1,17 @@
 let isRunning = false;
 let timer;
+
+let allCir = document.querySelectorAll('.bi-circle-fill');
 let wheel = document.getElementById('wheelTime');
 let playerPause = document.getElementById('playerPause');
 let audReset = document.getElementById('audReset');
 let audStartStop = document.getElementById('audStartStop');
+let audSkip = document.getElementById('audSkip')
 let sidebar = document.getElementById('sidebar');
 let expAction = document.getElementById('exp-action');
-
-
 let pointToBeGood = 0;
+let CirRoll = 0;
 let timeoutId;
-
 function startStop() {
     audStartStop.play()
     if (isRunning) {
@@ -35,6 +36,10 @@ document.getElementById('reset').addEventListener('mousedown', () => {
         wheel.style.stroke='#8E672B'
         wheel.style.strokeDashoffset = 0;
         playerPause.setAttribute('class','bi-caret-right')
+        //Clear all Cir
+        for(let i=0;i<4;i++){
+            allCir[i].style.color='#ffffff77';
+        }
     }, 1000);
 });
 
@@ -43,6 +48,14 @@ document.getElementById('reset').addEventListener('mouseup', () => {
     clearTimeout(timeoutId);
 });
 
+function skip(){
+    playerPause.setAttribute('class','bi-skip-end');
+    audSkip.play()
+    playerPause.style.transition = '.5s'
+    document.getElementById('time-left').innerText = '00:00';
+}
+
+
 
 function countdown() {
     let timeLeft = document.getElementById('time-left').innerText;
@@ -50,26 +63,40 @@ function countdown() {
     let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616;
     let relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676; 
     let beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
+    
     let alarm = document.getElementById('pomoAlarm')
-
+    playerPause.setAttribute('class','bi-pause')
+    
     if (minutes === 0 && seconds === 0) {
         if (document.getElementById('timer-label').innerText === 'Working') {
             
-
+            
             if(pointToBeGood === 4){
-                document.getElementById('timer-label').innerText = 'Be good';
+                document.getElementById('timer-label').innerText = 'Enjoy and rest';
                 timeLeft = '15:00';
                 wheel.style.stroke='#518E2B'
-                pointToBeGood = 0;
+                
+                //Clear all Cir
+                for(let i=0;i<4;i++){
+                    allCir[i].style.color='#ffffff77';
+                }
+                pointToBeGood=0
+                CirRoll = 0
+                if(pointToBeGood == 0){
+                    CirRoll = 0
+                }             
             }else{
                 document.getElementById('timer-label').innerText = 'Relaxing';
                 timeLeft = '05:00';
                 wheel.style.stroke='#2B6A8E'
+                
+                allCir[CirRoll].style.color='#ffffff';
+                CirRoll++
+                pointToBeGood++;
             }
-            pointToBeGood++;
+       
             alarm.play();
-            
-            
+  
         } else {
             document.getElementById('timer-label').innerText = 'Working';
             timeLeft = '25:00';
