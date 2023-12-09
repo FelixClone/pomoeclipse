@@ -36,7 +36,8 @@ document.getElementById('reset').addEventListener('mousedown', () => {
         wheel.style.stroke='#8E672B'
         wheel.style.strokeDashoffset = 0;
         playerPause.setAttribute('class','bi-caret-right')
-        //Clear all Cir
+        //Clear all Cir and reset
+        CirRoll = 0;
         for(let i=0;i<4;i++){
             allCir[i].style.color='#ffffff77';
         }
