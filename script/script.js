@@ -65,7 +65,7 @@ function countdown() {
     // which is the value needed to make the complete wheel cycle
     let workingSecondToMakePerfectWheel = 0.29352901934623082054703135423616;
     let relaxingSecondToMakePerfectWheel = 1.4715719063545150501672240802676; 
-    let beGoodSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
+    let longRestSecondToMakePerfectWheel = 0.48943270300333704115684093437152;
     
     playerPause.setAttribute('class','bi-pause')  
     if (minutes === 0 && seconds === 0) {
@@ -108,14 +108,16 @@ function countdown() {
         }
         let minutesInSeconds = minutes*60; 
         let minutesPlusSecond = minutesInSeconds+seconds;
+        
+        // changing the time wheel based on minutes and seconds
         if(document.getElementById('timer-label').innerText === 'Working'){
             wheel.style.strokeDashoffset = 440-(workingSecondToMakePerfectWheel*minutesPlusSecond);
         }
         if(document.getElementById('timer-label').innerText === 'Relaxing'){
             wheel.style.strokeDashoffset = 440-(relaxingSecondToMakePerfectWheel*minutesPlusSecond);
         }
-        if(document.getElementById('timer-label').innerText === 'Be good'){
-            wheel.style.strokeDashoffset = 440-(beGoodSecondToMakePerfectWheel*minutesPlusSecond);
+        if(document.getElementById('timer-label').innerText === 'Enjoy and rest'){
+            wheel.style.strokeDashoffset = 440-(longRestSecondToMakePerfectWheel*minutesPlusSecond);
         }
         timeLeft = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
     }
