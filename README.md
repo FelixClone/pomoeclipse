@@ -8,7 +8,7 @@
 </p>
 
 <div align="center"> <!--Icon-->
-   <img width="100px" src="/img/PomoEclipse-icon.png">
+   <img width="100px" src="https://github.com/FelixClone/pomoeclipse/assets/85363903/19331eb5-1406-4d0c-92ed-e27b35bc6755">
 </div>
 
 As a pomodoro you will have 25 minutes to study or work. When those 25 minutes are up, you'll get 5 minutes to rest, a short rest and that completes one cycle, and when you've completed four cycles you'll get a long rest.
